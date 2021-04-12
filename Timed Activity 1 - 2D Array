@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int arry[2][3] = {
+    {1100 , 1111 , 1234} , // ID Number
+    {5555 , 1122 , 4321}   // PIN Number
+    };
+    int id  , pin; // user input variables
+    int counter , verif; // controls and verifies the user input
+
+    printf("Enter ID Number: ");
+    scanf("%d", &id); // asks the user's ID
+
+    printf("Enter PIN Number: ");
+    scanf("%d", &pin); // asks the users's PIN
+
+    // this loop finds match for ID and PIN:
+    while(counter != 3){
+        if (id == arry[0][counter] && pin == arry[1][counter]){
+            verif = 1;
+            break;
+        }
+        counter++;
+    }
+
+    // this function verifies the user's input and prints the result:
+    if(verif == 1 ){
+        printf("You have successfully logged in!");
+        printf("\nID#: %d\n\n", arry[0][counter]);
+    } else{printf("You Entered an invalid ID/PIN\n\n");}
+
+
+    return 0;
+}
